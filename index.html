@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager Library — Sitio de Presentación</title>
+    <title>Manager Library — Plataforma de Presentación</title>
     <style>
-        /* Estilos Base Sólidos y Modernos */
+        /* Paleta Ejecutiva: Midnight Emerald & Warm Gray */
         body { 
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             line-height: 1.6; 
-            color: #1e293b; 
-            background-color: #f8fafc; 
+            color: #2d3748; 
+            background-color: #f3f4f6; 
             margin: 0; 
             padding: 0;
-            display: flex;
-            flex-content: column;
-            min-height: screen;
+            min-height: 100vh;
         }
         
         .container {
@@ -26,99 +24,112 @@
             box-sizing: border-box;
         }
 
-        /* Encabezado Corporativo Premium */
+        /* Encabezado en Verde Esmeralda Profundo y Oro */
         header { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
+            background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); 
             color: white; 
-            padding: 45px 30px; 
+            padding: 50px 30px; 
             text-align: center; 
-            border-radius: 24px; 
+            border-radius: 20px; 
             margin-bottom: 30px; 
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px -5px rgba(4, 120, 87, 0.15);
+            border-bottom: 4px solid #d97706; /* Detalle en oro/ámbar */
         }
         
         h1 { 
             margin: 0; 
-            font-size: 2.5rem; 
-            font-weight: 800;
-            letter-spacing: -0.05em;
+            font-size: 2.7rem; 
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            color: #fcc419; /* Título dorado */
         }
         
         .subtitle {
-            color: #94a3b8;
+            color: #a7f3d0;
             font-size: 1.1rem;
-            margin: 10px 0 0 0;
+            margin: 12px 0 0 0;
             font-weight: 500;
+            letter-spacing: 0.02em;
         }
         
         .badge { 
             display: inline-block;
-            background: rgba(99, 102, 241, 0.15); 
-            color: #a5b4fc; 
-            padding: 6px 16px; 
-            border-radius: 100px; 
+            background: rgba(217, 119, 6, 0.2); 
+            color: #fcd34d; 
+            padding: 6px 18px; 
+            border-radius: 50px; 
             font-size: 0.75rem; 
             font-weight: 700; 
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            margin-top: 15px;
+            letter-spacing: 0.12em;
+            border: 1px solid rgba(217, 119, 6, 0.4);
+            margin-top: 18px;
         }
 
-        /* Tarjetas de Contenedores Organizados */
+        /* Cuadros y Tarjetas Organizadas */
         .card { 
             background: #ffffff;
-            border: 1px solid #e2e8f0; 
+            border: 1px solid #e5e7eb; 
             padding: 30px; 
-            border-radius: 20px; 
+            border-radius: 16px; 
             margin-bottom: 24px; 
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #059669; /* Borde izquierdo esmeralda */
         }
         
         h2 {
             margin-top: 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #0f172a;
-            letter-spacing: -0.02em;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #064e3b;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
         }
 
-        /* Estructura del Stack Tecnológico en Cuadros */
+        /* Bloques de la Arquitectura */
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1xl));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
         
         .tech-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 14px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 16px;
+            border-radius: 12px;
             text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .tech-box:hover {
+            border-color: #34d399;
+            background-color: #f0fdf4;
         }
         
         .tech-label {
             display: block;
             font-size: 0.75rem;
-            font-weight: 600;
-            color: #64748b;
+            font-weight: 700;
+            color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         
         .tech-value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #334155;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
         }
 
-        /* Listas de Capacidades con Checkmarks */
+        /* Listado de Capacidades */
         .capability-list {
             list-style: none;
             padding: 0;
@@ -126,43 +137,43 @@
         }
         
         .capability-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 15px 20px;
-            border-radius: 14px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 16px 20px;
+            border-radius: 12px;
             margin-bottom: 12px;
             display: flex;
             align-items: flex-start;
         }
         
         .check-icon {
-            color: #10b981;
-            font-weight: bold;
-            margin-right: 12px;
+            color: #d97706; /* Checkmarks en color oro */
+            font-weight: 900;
+            margin-right: 14px;
             font-size: 1.1rem;
             line-height: 1;
         }
         
         .capability-text {
             font-size: 0.95rem;
-            color: #475569;
+            color: #4b5563;
         }
         
         .capability-text strong {
-            color: #0f172a;
+            color: #111827;
         }
 
-        /* Pie de Página Nítido */
+        /* Pie de Página */
         footer {
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
             font-family: monospace;
             font-size: 11px;
-            color: #64748b;
+            color: #6b7280;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 40px;
+            letter-spacing: 0.08em;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -176,18 +187,18 @@
         </header>
 
         <main>
-            <!-- Cuadro 1 -->
+            <!-- Bloque 1 -->
             <section class="card">
                 <h2>Sobre el Proyecto</h2>
-                <p style="margin: 0; font-size: 1rem; color: #475569; leading-relaxed: 1.7;">
+                <p style="margin: 0; font-size: 1rem; color: #4b5563; line-height: 1.7;">
                     <strong>Manager Library</strong> es un sistema de gestión de bibliotecas diseñado para administrar eficientemente el catálogo de libros, clasificaciones por categorías y el control estricto de préstamos vigentes o vencidos para los socios de la institución.
                 </p>
             </section>
 
-            <!-- Cuadro 2 -->
+            <!-- Bloque 2 -->
             <section class="card">
                 <h2>Arquitectura y Stack Tecnológico</h2>
-                <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #475569;">
+                <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #4b5563;">
                     Siguiendo las pautas de Spec-Driven Development (SDD), la especificación de negocio original fue traducida e implementada en los siguientes entornos de desarrollo:
                 </p>
                 <div class="tech-grid">
@@ -206,20 +217,20 @@
                 </div>
             </section>
 
-            <!-- Cuadro 3 -->
+            <!-- Bloque 3 -->
             <section class="card">
                 <h2>Capacidades Implementadas</h2>
                 <ul class="capability-list">
                     <li class="capability-item">
-                        <span class="check-icon">✔</span>
+                        <span class="check-icon">✦</span>
                         <span class="capability-text"><strong>Modelo Físico Robusto:</strong> Migraciones relacionales completas con control estricto de restricciones concurrentes (disponibilidad de ejemplares).</span>
                     </li>
                     <li class="capability-item">
-                        <span class="check-icon">✔</span>
+                        <span class="check-icon">✦</span>
                         <span class="capability-text"><strong>Contrato API v1:</strong> Enrutamiento estructurado para flujos operativos de autenticación, búsqueda indexada y reportes de uso.</span>
                     </li>
                     <li class="capability-item">
-                        <span class="check-icon">✔</span>
+                        <span class="check-icon">✦</span>
                         <span class="capability-text"><strong>Interfaz de Usuario Reactiva:</strong> Componentes desacoplados para búsqueda dinámica y validación de reglas de negocio en formularios.</span>
                     </li>
                 </ul>
