@@ -4,111 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Library — Sitio de Presentación</title>
-    <!-- Tailwind CSS Engine para un renderizado moderno e instantáneo -->
-    <script src="https://jsdelivr.net"></script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased">
-
-    <!-- Contenedor Principal -->
-    <main class="max-w-4xl w-full mx-auto my-12 px-4 sm:px-6 flex-grow">
+    <style>
+        /* Estilos Base Sólidos y Modernos */
+        body { 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: #1e293b; 
+            background-color: #f8fafc; 
+            margin: 0; 
+            padding: 0;
+            display: flex;
+            flex-content: column;
+            min-height: screen;
+        }
         
-        <!-- Encabezado Principal de Alta Calidad -->
-        <header class="bg-slate-900 rounded-3xl p-8 sm:p-10 mb-8 shadow-xl text-center relative overflow-hidden">
-            <!-- Efecto sutil de fondo decorativo -->
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 opacity-50"></div>
-            
-            <div class="relative z-10 flex flex-col items-center">
-                <span class="text-5xl mb-4 drop-shadow-md">📚</span>
-                <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Manager Library</h1>
-                <p class="text-slate-400 font-medium text-sm sm:text-base mt-2 max-w-xl">
-                    Solución Técnica Desarrollada bajo la Metodología SDD
-                </p>
-                <span class="mt-4 bg-indigo-500/10 text-indigo-300 text-xs font-bold px-4 py-2 rounded-full border border-indigo-500/20 uppercase tracking-widest shadow-inner">
-                    Ficha ADSO 3239188
-                </span>
-            </div>
+        .container {
+            max-width: 850px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Encabezado Corporativo Premium */
+        header { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
+            color: white; 
+            padding: 45px 30px; 
+            text-align: center; 
+            border-radius: 24px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 { 
+            margin: 0; 
+            font-size: 2.5rem; 
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+        
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin: 10px 0 0 0;
+            font-weight: 500;
+        }
+        
+        .badge { 
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15); 
+            color: #a5b4fc; 
+            padding: 6px 16px; 
+            border-radius: 100px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            margin-top: 15px;
+        }
+
+        /* Tarjetas de Contenedores Organizados */
+        .card { 
+            background: #ffffff;
+            border: 1px solid #e2e8f0; 
+            padding: 30px; 
+            border-radius: 20px; 
+            margin-bottom: 24px; 
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Estructura del Stack Tecnológico en Cuadros */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1xl));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .tech-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 14px;
+            text-align: center;
+        }
+        
+        .tech-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+        
+        .tech-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        /* Listas de Capacidades con Checkmarks */
+        .capability-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .capability-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .check-icon {
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        
+        .capability-text {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        
+        .capability-text strong {
+            color: #0f172a;
+        }
+
+        /* Pie de Página Nítido */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Manager Library</h1>
+            <p class="subtitle">Solución Técnica Desarrollada bajo la Metodología SDD</p>
+            <span class="badge">Ficha ADSO 3239188</span>
         </header>
 
-        <!-- Bloques Organizados en Contenedores Estilizados -->
-        <div class="grid gap-6">
-            
-            <!-- Tarjeta 1: Sobre el Proyecto -->
-            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
-                <div class="flex items-start space-x-4">
-                    <div class="p-3 bg-indigo-50 rounded-xl text-xl border border-indigo-100 flex-shrink-0">🏢</div>
-                    <div>
-                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-2 uppercase text-xs text-indigo-600 tracking-widest">Sobre el Proyecto</h2>
-                        <p class="text-base text-slate-600 leading-relaxed">
-                            <strong class="text-slate-900 font-semibold">Manager Library</strong> es un sistema de gestión de bibliotecas diseñado para administrar eficientemente el catálogo de libros, clasificaciones por categorías y el control estricto de préstamos vigentes o vencidos para los socios de la institución.
-                        </p>
+        <main>
+            <!-- Cuadro 1 -->
+            <section class="card">
+                <h2>Sobre el Proyecto</h2>
+                <p style="margin: 0; font-size: 1rem; color: #475569; leading-relaxed: 1.7;">
+                    <strong>Manager Library</strong> es un sistema de gestión de bibliotecas diseñado para administrar eficientemente el catálogo de libros, clasificaciones por categorías y el control estricto de préstamos vigentes o vencidos para los socios de la institución.
+                </p>
+            </section>
+
+            <!-- Cuadro 2 -->
+            <section class="card">
+                <h2>Arquitectura y Stack Tecnológico</h2>
+                <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #475569;">
+                    Siguiendo las pautas de Spec-Driven Development (SDD), la especificación de negocio original fue traducida e implementada en los siguientes entornos de desarrollo:
+                </p>
+                <div class="tech-grid">
+                    <div class="tech-box">
+                        <span class="tech-label">Frontend</span>
+                        <span class="tech-value">React</span>
+                    </div>
+                    <div class="tech-box">
+                        <span class="tech-label">Backend</span>
+                        <span class="tech-value">PHP Laravel</span>
+                    </div>
+                    <div class="tech-box">
+                        <span class="tech-label">Base de Datos</span>
+                        <span class="tech-value">PostgreSQL</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Tarjeta 2: Arquitectura y Stack Tecnológico -->
-            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
-                <div class="flex items-start space-x-4">
-                    <div class="p-3 bg-emerald-50 rounded-xl text-xl border border-emerald-100 flex-shrink-0">⚡</div>
-                    <div class="w-full">
-                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-2 uppercase text-xs text-emerald-600 tracking-widest">Arquitectura y Stack Tecnológico</h2>
-                        <p class="text-base text-slate-600 leading-relaxed mb-4">
-                            Siguiendo las pautas de Spec-Driven Development (SDD), la especificación de negocio original fue traducida e implementada en los siguientes entornos de desarrollo:
-                        </p>
-                        <!-- Cuadros / Badges del Stack Organizados en Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Frontend</span>
-                                <span class="text-sm font-extrabold text-slate-800">React</span>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Backend</span>
-                                <span class="text-sm font-extrabold text-slate-800">PHP Laravel</span>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Base de Datos</span>
-                                <span class="text-sm font-extrabold text-slate-800">PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Cuadro 3 -->
+            <section class="card">
+                <h2>Capacidades Implementadas</h2>
+                <ul class="capability-list">
+                    <li class="capability-item">
+                        <span class="check-icon">✔</span>
+                        <span class="capability-text"><strong>Modelo Físico Robusto:</strong> Migraciones relacionales completas con control estricto de restricciones concurrentes (disponibilidad de ejemplares).</span>
+                    </li>
+                    <li class="capability-item">
+                        <span class="check-icon">✔</span>
+                        <span class="capability-text"><strong>Contrato API v1:</strong> Enrutamiento estructurado para flujos operativos de autenticación, búsqueda indexada y reportes de uso.</span>
+                    </li>
+                    <li class="capability-item">
+                        <span class="check-icon">✔</span>
+                        <span class="capability-text"><strong>Interfaz de Usuario Reactiva:</strong> Componentes desacoplados para búsqueda dinámica y validación de reglas de negocio en formularios.</span>
+                    </li>
+                </ul>
             </section>
+        </main>
 
-            <!-- Tarjeta 3: Capacidades Implementadas -->
-            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
-                <div class="flex items-start space-x-4">
-                    <div class="p-3 bg-purple-50 rounded-xl text-xl border border-purple-100 flex-shrink-0">🚀</div>
-                    <div>
-                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-4 uppercase text-xs text-purple-600 tracking-widest">Capacidades Implementadas</h2>
-                        <!-- Lista en formato de cuadros informativos limpios -->
-                        <ul class="space-y-3">
-                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
-                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
-                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Modelo Físico Robusto:</strong> Migraciones relacionales completas con control estricto de restricciones concurrentes (disponibilidad de ejemplares).</span>
-                            </li>
-                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
-                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
-                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Contrato API v1:</strong> Enrutamiento estructurado para flujos operativos de autenticación, búsqueda indexada y reportes de uso.</span>
-                            </li>
-                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
-                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
-                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Interfaz de Usuario Reactiva:</strong> Componentes desacoplados para búsqueda dinámica y validación de reglas de negocio en formularios.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- Footer Corporativo e Industrial -->
-    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-4 text-center border-t border-slate-800">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-[11px] font-mono tracking-wider text-slate-500 uppercase">
-                Aislamiento y Presentación Estática — Entorno de Evaluación Final ADSO 2026
-            </p>
-        </div>
-    </footer>
+        <footer>
+            Aislamiento y Presentación Estática — Entorno de Evaluación Final ADSO 2026
+        </footer>
+    </div>
 
 </body>
 </html>
