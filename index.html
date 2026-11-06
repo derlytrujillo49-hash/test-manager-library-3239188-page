@@ -5,51 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Library — Plataforma de Presentación</title>
     <style>
-        /* Paleta Ejecutiva: Midnight Emerald & Warm Gray */
+        /* Paleta de Colores: Midnight Emerald, Slate & Amber */
         body { 
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             line-height: 1.6; 
-            color: #2d3748; 
-            background-color: #f3f4f6; 
+            color: #334155; 
+            background-color: #f1f5f9; 
             margin: 0; 
             padding: 0;
             min-height: 100vh;
         }
         
         .container {
-            max-width: 850px;
+            max-width: 900px;
             width: 100%;
             margin: 40px auto;
             padding: 0 20px;
             box-sizing: border-box;
         }
 
-        /* Encabezado en Verde Esmeralda Profundo y Oro */
+        /* Encabezado Principal */
         header { 
             background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); 
             color: white; 
-            padding: 50px 30px; 
+            padding: 50px 40px; 
             text-align: center; 
-            border-radius: 20px; 
+            border-radius: 24px; 
             margin-bottom: 30px; 
-            box-shadow: 0 10px 30px -5px rgba(4, 120, 87, 0.15);
-            border-bottom: 4px solid #d97706; /* Detalle en oro/ámbar */
+            box-shadow: 0 10px 30px -5px rgba(4, 120, 87, 0.2);
+            border-bottom: 5px solid #d97706;
+            position: relative;
         }
         
         h1 { 
             margin: 0; 
-            font-size: 2.7rem; 
+            font-size: 2.8rem; 
             font-weight: 900;
             letter-spacing: -0.04em;
-            color: #fcc419; /* Título dorado */
+            color: #fbbf24;
         }
         
         .subtitle {
             color: #a7f3d0;
-            font-size: 1.1rem;
-            margin: 12px 0 0 0;
+            font-size: 1.15rem;
+            margin: 10px 0 0 0;
             font-weight: 500;
-            letter-spacing: 0.02em;
         }
         
         .badge { 
@@ -57,110 +57,131 @@
             background: rgba(217, 119, 6, 0.2); 
             color: #fcd34d; 
             padding: 6px 18px; 
-            border-radius: 50px; 
+            border-radius: 100px; 
             font-size: 0.75rem; 
             font-weight: 700; 
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             border: 1px solid rgba(217, 119, 6, 0.4);
-            margin-top: 18px;
+            margin-top: 15px;
         }
 
         /* Cuadros y Tarjetas Organizadas */
         .card { 
             background: #ffffff;
-            border: 1px solid #e5e7eb; 
-            padding: 30px; 
-            border-radius: 16px; 
+            border: 1px solid #e2e8f0; 
+            padding: 35px; 
+            border-radius: 20px; 
             margin-bottom: 24px; 
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #059669; /* Borde izquierdo esmeralda */
+            border-left: 6px solid #059669;
         }
         
         h2 {
             margin-top: 0;
-            font-size: 1.3rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: #064e3b;
-            letter-spacing: -0.01em;
-            border-bottom: 2px solid #f3f4f6;
-            padding-bottom: 8px;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
             letter-spacing: 0.08em;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        /* Bloques de la Arquitectura */
+        .card-text {
+            font-size: 1.05rem;
+            color: #475569;
+            margin: 0 0 20px 0;
+            line-height: 1.7;
+        }
+
+        /* Bloques de la Arquitectura (Grid) */
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
         }
         
         .tech-box {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.2s;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 16px;
+            transition: all 0.2s ease;
         }
         
         .tech-box:hover {
             border-color: #34d399;
             background-color: #f0fdf4;
+            transform: translateY(-2px);
         }
         
         .tech-label {
             display: block;
             font-size: 0.75rem;
             font-weight: 700;
-            color: #6b7280;
+            color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 6px;
         }
         
         .tech-value {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: #0f172a;
+            margin-bottom: 8px;
+            display: block;
         }
 
-        /* Listado de Capacidades */
+        .tech-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Listado de Capacidades de Negocio */
         .capability-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            gap: 14px;
         }
         
         .capability-item {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            padding: 16px 20px;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 18px 22px;
+            border-radius: 16px;
             display: flex;
             align-items: flex-start;
         }
         
         .check-icon {
-            color: #d97706; /* Checkmarks en color oro */
+            color: #d97706;
             font-weight: 900;
-            margin-right: 14px;
-            font-size: 1.1rem;
+            margin-right: 16px;
+            font-size: 1.2rem;
             line-height: 1;
         }
         
-        .capability-text {
-            font-size: 0.95rem;
-            color: #4b5563;
+        .capability-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 4px;
         }
-        
-        .capability-text strong {
-            color: #111827;
+
+        .capability-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            margin: 0;
+            line-height: 1.6;
         }
 
         /* Pie de Página */
@@ -169,17 +190,19 @@
             padding: 30px 20px;
             font-family: monospace;
             font-size: 11px;
-            color: #6b7280;
+            color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 50px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 60px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Encabezado -->
         <header>
             <h1>Manager Library</h1>
             <p class="subtitle">Solución Técnica Desarrollada bajo la Metodología SDD</p>
@@ -187,60 +210,66 @@
         </header>
 
         <main>
-            <!-- Bloque 1 -->
+            <!-- Tarjeta 1: Sobre el Proyecto -->
             <section class="card">
                 <h2>Sobre el Proyecto</h2>
-                <p style="margin: 0; font-size: 1rem; color: #4b5563; line-height: 1.7;">
-                    <strong>Manager Library</strong> es un sistema de gestión de bibliotecas diseñado para administrar eficientemente el catálogo de libros, clasificaciones por categorías y el control estricto de préstamos vigentes o vencidos para los socios de la institución.
+                <p class="card-text">
+                    <strong>Manager Library</strong> es un ecosistema digital de gestión diseñado para administrar el catálogo físico de libros, clasificaciones por categorías y el control de préstamos para los socios de la institución. El proyecto nace de una especificación técnica estricta y demuestra la capacidad de traducir reglas de negocio abstractas a componentes de software funcionales.
                 </p>
             </section>
 
-            <!-- Bloque 2 -->
+            <!-- Tarjeta 2: Arquitectura Traducida -->
             <section class="card">
                 <h2>Arquitectura y Stack Tecnológico</h2>
-                <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #4b5563;">
-                    Siguiendo las pautas de Spec-Driven Development (SDD), la especificación de negocio original fue traducida e implementada en los siguientes entornos de desarrollo:
+                <p class="card-text" style="font-size: 0.95rem; margin-bottom: 25px;">
+                    Siguiendo las pautas de <strong>Spec-Driven Development (SDD)</strong>, el diseño original fue interpretado e implementado de forma desacoplada utilizando un stack de desarrollo moderno, seguro y altamente escalable:
                 </p>
+                
                 <div class="tech-grid">
+                    <!-- Caja Frontend -->
                     <div class="tech-box">
-                        <span class="tech-label">Frontend</span>
-                        <span class="tech-value">React</span>
+                        <span class="tech-label">Entorno Cliente</span>
+                        <span class="tech-value">React (Vite)</span>
+                        <p class="tech-desc">Interfaz SPA reactiva basada en componentes modulares y estados controlados para las validaciones del operador.</p>
                     </div>
+                    <!-- Caja Backend -->
                     <div class="tech-box">
-                        <span class="tech-label">Backend</span>
+                        <span class="tech-label">Servicio API</span>
                         <span class="tech-value">PHP Laravel</span>
+                        <p class="tech-desc">Capa lógica central encargada de procesar las transacciones complejas, control de accesos y el enrutamiento v1.</p>
                     </div>
+                    <!-- Caja Base de Datos -->
                     <div class="tech-box">
-                        <span class="tech-label">Base de Datos</span>
-                        <span class="tech-value">PostgreSQL</span>
+                        <span class="tech-label">Motor de Datos</span>
+                        <span class="tech-value">PostgreSQL 16</span>
+                        <p class="tech-desc">Almacenamiento relacional operando estrictamente en zona horaria UTC, con restricciones CHECK y claves UUID.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Bloque 3 -->
+            <!-- Tarjeta 3: Reglas de Negocio Implementadas -->
             <section class="card">
-                <h2>Capacidades Implementadas</h2>
+                <h2>Reglas de Negocio e Integridad de Datos</h2>
+                <p class="card-text" style="font-size: 0.95rem; margin-bottom: 20px;">
+                    El sistema aplica las políticas innegociables del documento de especificación a nivel de software y base de datos:
+                </p>
+                
                 <ul class="capability-list">
                     <li class="capability-item">
                         <span class="check-icon">✦</span>
-                        <span class="capability-text"><strong>Modelo Físico Robusto:</strong> Migraciones relacionales completas con control estricto de restricciones concurrentes (disponibilidad de ejemplares).</span>
+                        <div>
+                            <span class="capability-title">Control de Ejemplares (CHECK Constraint)</span>
+                            <p class="capability-desc">La base de datos asegura de forma nativa que los libros disponibles permanezcan en un rango válido mayor o igual a cero y menor o igual al inventario total.</p>
+                        </div>
                     </li>
                     <li class="capability-item">
                         <span class="check-icon">✦</span>
-                        <span class="capability-text"><strong>Contrato API v1:</strong> Enrutamiento estructurado para flujos operativos de autenticación, búsqueda indexada y reportes de uso.</span>
+                        <div>
+                            <span class="capability-title">Límite Transaccional de Préstamos</span>
+                            <p class="capability-desc">Tanto la interfaz en React como el Backend en Laravel validan que un proceso de préstamo contenga un límite estricto de mínimo 1 y máximo 3 líneas de libros por sesión.</p>
+                        </div>
                     </li>
                     <li class="capability-item">
                         <span class="check-icon">✦</span>
-                        <span class="capability-text"><strong>Interfaz de Usuario Reactiva:</strong> Componentes desacoplados para búsqueda dinámica y validación de reglas de negocio en formularios.</span>
-                    </li>
-                </ul>
-            </section>
-        </main>
-
-        <footer>
-            Aislamiento y Presentación Estática — Entorno de Evaluación Final ADSO 2026
-        </footer>
-    </div>
-
-</body>
-</html>
+                        <div>
+                            <span class="capability-title">Preservación Histórica Inmutable</span>
