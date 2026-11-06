@@ -4,21 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Library — Official Presentation</title>
+    <!-- Tailwind CSS CDN para estilizado rápido y moderno -->
+    <script src="https://jsdelivr.net"></script>
 </head>
-<body style="font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333;">
-    <h1>📚 Manager Library</h1>
-    <p>The definitive platform for efficient catalog management, member tracking, and secure loan registration.</p>
-    
-    <h2>System Core Features</h2>
-    <ul>
-        <li><strong>Dynamic Catalog:</strong> Advanced book search with pagination and soft deletion (`deleted_at`).</li>
-        <li><strong>Transactional Integrity:</strong> Strict business constraint limiting loans from 1 to 3 items per transaction.</li>
-        <li><strong>Role-Based Access Control:</strong> Protected environments tailored for internal operators (`admin` and `librarian`).</li>
-    </ul>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
 
-    <hr style="margin-top: 40px; border: 0; border-top: 1px solid #eee;" />
-    <small style="color: #666; display: block; text-align: center;">
-        * This is a static public landing page. It does not process sensitive data or interact with API endpoints.
-    </small>
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto my-12 px-6 py-10 bg-white rounded-2xl shadow-sm border border-slate-100 flex-grow">
+        
+        <!-- Header / Brand Section -->
+        <header class="flex items-center space-x-3 mb-8 pb-6 border-b border-slate-100">
+            <span class="text-4xl">📚</span>
+            <div>
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Manager Library</h1>
+                <p class="text-sm font-medium text-indigo-600 uppercase tracking-wider mt-0.5">Official Presentation</p>
+            </div>
+        </header>
+
+        <!-- Tagline Description -->
+        <section class="mb-10">
+            <p class="text-lg text-slate-600 leading-relaxed font-normal">
+                The definitive platform for efficient catalog management, member tracking, and secure, transaction-safe loan registration.
+            </p>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="space-y-6">
+            <h2 class="text-xl font-bold text-slate-900 tracking-tight">System Core Features (SDD)</h2>
+            
+            <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-3">
+                <!-- Feature 1 -->
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-xl mb-2">🔍</div>
+                    <h3 class="font-bold text-slate-900 mb-1 text-base">Dynamic Catalog</h3>
+                    <p class="text-sm text-slate-600 leading-normal">Advanced book search with real-time text query parameters, full pagination, and safe software-level record soft deletion (`deleted_at`).</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-xl mb-2">🛡️</div>
+                    <h3 class="font-bold text-slate-900 mb-1 text-base">Transactional Integrity</h3>
+                    <p class="text-sm text-slate-600 leading-normal">Strict domain rule execution engine. Restricts loan transactions to a strict boundary limit of 1 to 3 active catalog items per workflow session.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-xl mb-2">🔑</div>
+                    <h3 class="font-bold text-slate-900 mb-1 text-base">Access Control</h3>
+                    <p class="text-sm text-slate-600 leading-normal">Protected structural operations framework designed exclusively for isolated secure roles (`admin` and `librarian`).</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Security Isolation Boundaries Notices -->
+    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-6 text-center border-t border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-xs tracking-wide leading-relaxed">
+                * This repository serves strictly as a static public isolated overview space. It features absolute total separation of concerns, maintaining zero execution context, zero dynamic network API connectivity vectors, and holds no storage handling profiles for confidential credentials or user authentication hashes (`password_hash`).
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
