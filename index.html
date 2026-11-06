@@ -3,65 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager Library — Official Presentation</title>
-    <!-- Tailwind CSS CDN para estilizado rápido y moderno -->
+    <title>Manager Library — System Overview</title>
+    <!-- Tailwind CSS Engine para renderizado rápido y estético -->
     <script src="https://jsdelivr.net"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Main Container -->
-    <main class="max-w-4xl mx-auto my-12 px-6 py-10 bg-white rounded-2xl shadow-sm border border-slate-100 flex-grow">
+    <!-- Contenedor Principal Centrado -->
+    <main class="max-w-4xl w-full mx-auto my-12 px-4 sm:px-6 flex-grow">
         
-        <!-- Header / Brand Section -->
-        <header class="flex items-center space-x-3 mb-8 pb-6 border-b border-slate-100">
-            <span class="text-4xl">📚</span>
-            <div>
-                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Manager Library</h1>
-                <p class="text-sm font-medium text-indigo-600 uppercase tracking-wider mt-0.5">Official Presentation</p>
+        <!-- Tarjeta del Encabezado Principal -->
+        <header class="bg-white rounded-2xl p-8 mb-6 shadow-sm border border-slate-200 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
+            <div class="flex items-center space-x-4 text-center sm:text-left">
+                <span class="text-5xl">📚</span>
+                <div>
+                    <h1 class="text-3xl font-black text-slate-900 tracking-tight">Manager Library</h1>
+                    <p class="text-sm font-semibold text-indigo-600 uppercase tracking-widest mt-1">Spec-Driven Development Architecture</p>
+                </div>
             </div>
+            <!-- Badge de Estado del Proyecto -->
+            <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 uppercase tracking-wider">
+                Active Spec Verified
+            </span>
         </header>
 
-        <!-- Tagline Description -->
-        <section class="mb-10">
+        <!-- Tarjeta de Descripción General -->
+        <section class="bg-white rounded-2xl p-8 mb-6 shadow-sm border border-slate-200">
+            <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Platform Vision</h2>
             <p class="text-lg text-slate-600 leading-relaxed font-normal">
-                The definitive platform for efficient catalog management, member tracking, and secure, transaction-safe loan registration.
+                The definitive platform optimized for high-performance catalog management, member validation workflows, and transaction-safe borrowing execution.
             </p>
         </section>
 
-        <!-- Core Features Section -->
-        <section class="space-y-6">
-            <h2 class="text-xl font-bold text-slate-900 tracking-tight">System Core Features (SDD)</h2>
+        <!-- Sección de Bloques y Cuadros Organizados -->
+        <section class="space-y-4">
+            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest pl-2">System Core Features</h2>
             
-            <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-3">
-                <!-- Feature 1 -->
-                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-xl mb-2">🔍</div>
-                    <h3 class="font-bold text-slate-900 mb-1 text-base">Dynamic Catalog</h3>
-                    <p class="text-sm text-slate-600 leading-normal">Advanced book search with real-time text query parameters, full pagination, and safe software-level record soft deletion (`deleted_at`).</p>
+            <!-- Grid de Tres Columnas Impecable -->
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                <!-- Cuadro 1: Catálogo -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
+                    <div>
+                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🔍</div>
+                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Dynamic Catalog</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Advanced book query engine featuring direct title keyword search parameters, real-time filters, full catalog pagination, and secure record soft deletion boundaries (`deleted_at`).</p>
+                    </div>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-xl mb-2">🛡️</div>
-                    <h3 class="font-bold text-slate-900 mb-1 text-base">Transactional Integrity</h3>
-                    <p class="text-sm text-slate-600 leading-normal">Strict domain rule execution engine. Restricts loan transactions to a strict boundary limit of 1 to 3 active catalog items per workflow session.</p>
+                <!-- Cuadro 2: Integridad -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
+                    <div>
+                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🛡️</div>
+                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Transactional Care</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Strict isolated domain validation engine. Enforces data integrity rules by limiting loan operations to an absolute boundary condition of 1 to 3 active catalog entities per single session.</p>
+                    </div>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-xl mb-2">🔑</div>
-                    <h3 class="font-bold text-slate-900 mb-1 text-base">Access Control</h3>
-                    <p class="text-sm text-slate-600 leading-normal">Protected structural operations framework designed exclusively for isolated secure roles (`admin` and `librarian`).</p>
+                <!-- Cuadro 3: Roles -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
+                    <div>
+                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🔑</div>
+                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Access Control</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Protected internal workspace routing layers designed exclusively to serve isolated functional management profiles (`admin` and `librarian`).</p>
+                    </div>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <!-- Footer Security Isolation Boundaries Notices -->
-    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-6 text-center border-t border-slate-800">
+    <!-- Pie de Página de Seguridad Aislado -->
+    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-6 text-center border-t border-slate-800 mt-12">
         <div class="max-w-4xl mx-auto">
-            <p class="text-xs tracking-wide leading-relaxed">
-                * This repository serves strictly as a static public isolated overview space. It features absolute total separation of concerns, maintaining zero execution context, zero dynamic network API connectivity vectors, and holds no storage handling profiles for confidential credentials or user authentication hashes (`password_hash`).
+            <p class="text-[11px] font-mono tracking-wide leading-relaxed text-slate-400">
+                * SYSTEM ARCHITECTURE NOTICE: This repository functions as a static public showcase block. It maintains strict architectural separation of concerns, carrying no dynamic database connections, zero runtime state access vectors, and zero handling protocols for administrative secrets or authentication values (`password_hash`).
             </p>
         </div>
     </footer>
