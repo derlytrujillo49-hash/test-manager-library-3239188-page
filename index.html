@@ -1,83 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager Library — System Overview</title>
-    <!-- Tailwind CSS Engine para renderizado rápido y estético -->
+    <title>Manager Library — Sitio de Presentación</title>
+    <!-- Tailwind CSS Engine para un renderizado moderno e instantáneo -->
     <script src="https://jsdelivr.net"></script>
 </head>
-<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- Contenedor Principal Centrado -->
+    <!-- Contenedor Principal -->
     <main class="max-w-4xl w-full mx-auto my-12 px-4 sm:px-6 flex-grow">
         
-        <!-- Tarjeta del Encabezado Principal -->
-        <header class="bg-white rounded-2xl p-8 mb-6 shadow-sm border border-slate-200 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
-            <div class="flex items-center space-x-4 text-center sm:text-left">
-                <span class="text-5xl">📚</span>
-                <div>
-                    <h1 class="text-3xl font-black text-slate-900 tracking-tight">Manager Library</h1>
-                    <p class="text-sm font-semibold text-indigo-600 uppercase tracking-widest mt-1">Spec-Driven Development Architecture</p>
-                </div>
+        <!-- Encabezado Principal de Alta Calidad -->
+        <header class="bg-slate-900 rounded-3xl p-8 sm:p-10 mb-8 shadow-xl text-center relative overflow-hidden">
+            <!-- Efecto sutil de fondo decorativo -->
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 opacity-50"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <span class="text-5xl mb-4 drop-shadow-md">📚</span>
+                <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Manager Library</h1>
+                <p class="text-slate-400 font-medium text-sm sm:text-base mt-2 max-w-xl">
+                    Solución Técnica Desarrollada bajo la Metodología SDD
+                </p>
+                <span class="mt-4 bg-indigo-500/10 text-indigo-300 text-xs font-bold px-4 py-2 rounded-full border border-indigo-500/20 uppercase tracking-widest shadow-inner">
+                    Ficha ADSO 3239188
+                </span>
             </div>
-            <!-- Badge de Estado del Proyecto -->
-            <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 uppercase tracking-wider">
-                Active Spec Verified
-            </span>
         </header>
 
-        <!-- Tarjeta de Descripción General -->
-        <section class="bg-white rounded-2xl p-8 mb-6 shadow-sm border border-slate-200">
-            <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Platform Vision</h2>
-            <p class="text-lg text-slate-600 leading-relaxed font-normal">
-                The definitive platform optimized for high-performance catalog management, member validation workflows, and transaction-safe borrowing execution.
-            </p>
-        </section>
-
-        <!-- Sección de Bloques y Cuadros Organizados -->
-        <section class="space-y-4">
-            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest pl-2">System Core Features</h2>
+        <!-- Bloques Organizados en Contenedores Estilizados -->
+        <div class="grid gap-6">
             
-            <!-- Grid de Tres Columnas Impecable -->
-            <div class="grid gap-6 md:grid-cols-3">
-                
-                <!-- Cuadro 1: Catálogo -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
+            <!-- Tarjeta 1: Sobre el Proyecto -->
+            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-indigo-50 rounded-xl text-xl border border-indigo-100 flex-shrink-0">🏢</div>
                     <div>
-                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🔍</div>
-                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Dynamic Catalog</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Advanced book query engine featuring direct title keyword search parameters, real-time filters, full catalog pagination, and secure record soft deletion boundaries (`deleted_at`).</p>
+                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-2 uppercase text-xs text-indigo-600 tracking-widest">Sobre el Proyecto</h2>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            <strong class="text-slate-900 font-semibold">Manager Library</strong> es un sistema de gestión de bibliotecas diseñado para administrar eficientemente el catálogo de libros, clasificaciones por categorías y el control estricto de préstamos vigentes o vencidos para los socios de la institución.
+                        </p>
                     </div>
                 </div>
+            </section>
 
-                <!-- Cuadro 2: Integridad -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
-                    <div>
-                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🛡️</div>
-                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Transactional Care</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Strict isolated domain validation engine. Enforces data integrity rules by limiting loan operations to an absolute boundary condition of 1 to 3 active catalog entities per single session.</p>
+            <!-- Tarjeta 2: Arquitectura y Stack Tecnológico -->
+            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-emerald-50 rounded-xl text-xl border border-emerald-100 flex-shrink-0">⚡</div>
+                    <div class="w-full">
+                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-2 uppercase text-xs text-emerald-600 tracking-widest">Arquitectura y Stack Tecnológico</h2>
+                        <p class="text-base text-slate-600 leading-relaxed mb-4">
+                            Siguiendo las pautas de Spec-Driven Development (SDD), la especificación de negocio original fue traducida e implementada en los siguientes entornos de desarrollo:
+                        </p>
+                        <!-- Cuadros / Badges del Stack Organizados en Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Frontend</span>
+                                <span class="text-sm font-extrabold text-slate-800">React</span>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Backend</span>
+                                <span class="text-sm font-extrabold text-slate-800">PHP Laravel</span>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-center items-center text-center">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Base de Datos</span>
+                                <span class="text-sm font-extrabold text-slate-800">PostgreSQL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Cuadro 3: Roles -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors duration-200">
+            <!-- Tarjeta 3: Capacidades Implementadas -->
+            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 transition-all duration-200 hover:shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-purple-50 rounded-xl text-xl border border-purple-100 flex-shrink-0">🚀</div>
                     <div>
-                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-100">🔑</div>
-                        <h3 class="font-extrabold text-slate-900 mb-2 text-base tracking-tight">Access Control</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Protected internal workspace routing layers designed exclusively to serve isolated functional management profiles (`admin` and `librarian`).</p>
+                        <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-4 uppercase text-xs text-purple-600 tracking-widest">Capacidades Implementadas</h2>
+                        <!-- Lista en formato de cuadros informativos limpios -->
+                        <ul class="space-y-3">
+                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
+                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
+                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Modelo Físico Robusto:</strong> Migraciones relacionales completas con control estricto de restricciones concurrentes (disponibilidad de ejemplares).</span>
+                            </li>
+                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
+                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
+                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Contrato API v1:</strong> Enrutamiento estructurado para flujos operativos de autenticación, búsqueda indexada y reportes de uso.</span>
+                            </li>
+                            <li class="bg-slate-50 border border-slate-150 p-4 rounded-xl flex items-start space-x-3">
+                                <span class="text-emerald-500 font-bold mt-0.5">✔</span>
+                                <span class="text-sm sm:text-base text-slate-600"><strong class="text-slate-900 font-semibold">Interfaz de Usuario Reactiva:</strong> Componentes desacoplados para búsqueda dinámica y validación de reglas de negocio en formularios.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Pie de Página de Seguridad Aislado -->
-    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-6 text-center border-t border-slate-800 mt-12">
+    <!-- Footer Corporativo e Industrial -->
+    <footer class="w-full bg-slate-900 text-slate-400 py-6 px-4 text-center border-t border-slate-800">
         <div class="max-w-4xl mx-auto">
-            <p class="text-[11px] font-mono tracking-wide leading-relaxed text-slate-400">
-                * SYSTEM ARCHITECTURE NOTICE: This repository functions as a static public showcase block. It maintains strict architectural separation of concerns, carrying no dynamic database connections, zero runtime state access vectors, and zero handling protocols for administrative secrets or authentication values (`password_hash`).
+            <p class="text-[11px] font-mono tracking-wider text-slate-500 uppercase">
+                Aislamiento y Presentación Estática — Entorno de Evaluación Final ADSO 2026
             </p>
         </div>
     </footer>
